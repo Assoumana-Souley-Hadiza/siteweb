@@ -1,0 +1,175 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#F5F5DC;
+    
+}
+header{
+    background-color:#008075 ;
+    color: #FFFFFF;
+    padding:10px ;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    border-bottom: 2px solid rgb(8, 8, 8);
+} 
+.logo{
+    display:flex;
+    align-items: center;
+}
+.logo img {
+    width: 60px;
+    margin-right: 10px;
+}
+nav ul{
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    display: flex;
+}
+nav li{
+    margin-right: 20px;
+}
+nav a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+.slogan{
+    padding: 10px;
+    text-align: center;
+}
+.slogan h2{
+    color: #212083;
+}
+.slogan p{
+    color: rgb(54, 11, 95);
+    margin-bottom: 30px;
+}
+.recherche{
+    display:flex;
+    justify-content: center;
+}
+.recherche input{
+    padding: 10px;
+    width: 700px;
+}
+.recherche button{
+    padding: 10px;
+    background-color: beige;
+    color: blue;
+    border: none;
+    cursor:pointer;
+}
+.banniere{
+    width: 100%;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.banniere img{
+    width: 100%;
+    height:auto ;
+    display:block ;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0, 0, 0.1);
+}
+.banniere-text{
+    position:absolute;
+    top: 10%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:#212083;
+}
+.banniere-text h1{
+     margin-bottom: 10px;
+    }
+.produit-section{
+    display:flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.produit-colonne{
+    text-align: center;
+    flex:1;
+    margin: 0 10px;
+}
+.produit-colonne img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.price{
+    color:#212083;
+    font-weight: bold;
+}
+.image-texte{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.text{
+    flex:1;
+    text-align: left;
+    padding: 0 20px;
+}
+.image-texte h2{
+    text-align: center;
+}
+.image-gauche{
+    flex-basis:30%;
+    max-width: 30%;
+}
+.image-gauche img{
+    width: 100%;
+    height: auto;
+
+}
+form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button[type="reset"] {
+    background-color: #f44336;
+  }
+footer{
+    background-color:#800000 ;
+    color:#FFFFFF ;
+    text-align: center;
+    padding:10px;
+}
+.footer-contenue{
+    max-width: 1200px;
+    margin:0 auto;
+}
