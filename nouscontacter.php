@@ -28,36 +28,39 @@
         <form name="f" action="nouscontacter.php" method="post" onSubmit="verif()">
             <table>
               <tr>
-                <th><label for="NP">Nom :</label></th>
-                <td><input type="text" id="NP" name="nom" required></td>
+                <th><label for="nom">Nom :</label></th>
+                <td><input type="text" id="nom" name="nom" required></td>
               </tr>
               <tr>
-                <th><label for="NP">Prénom :</label></th>
-                <td><input type="text" id="NP" name="prenom" required></td>
+                <th><label for="prenom">Prénom :</label></th>
+                <td><input type="text" id="prenom" name="prenom" required></td>
               </tr>
               <tr>
-                <th><label for="CN">CIN :</label></th>
-                <td><input type="text" id="CN" name="cin" required></td>
+                <th><label for="cin">CIN :</label></th>
+                <td><input type="text" id="cin" name="cin" required></td>
               </tr>
               <tr>
-                <td><label for="eml">Email :</label></td>
-                <td><input type="email" id="eml" name="email" required></td>
+                <td><label for="email">Email :</label></td>
+                <td><input type="email" id="email" name="email" required></td>
               </tr>
               <tr>
                 <td><label for="message">Message :</label></td>
                 <td><textarea id="message" name="message" rows="4" required></textarea></td>
               </tr>
+              <tr>
+                <td><label for="adresse">Adresse :</label></td>
+                <td><textarea id="adresse" name="adresse" rows="4" required></textarea></td>
+              </tr>
             </table>
-          
             <button type="submit">Envoyer</button>
             <button type="reset">Réinitialiser</button>
           </form>
     </center>
     <?php
     include('fonctionBD.php');
-     if(isset($_POST['nom'])and isset($_POST['prenom']) and isset($_POST['cin']) and isset($_POST['email'])and isset($_POST['message']))
+     if(isset($_POST['nom'])and isset($_POST['prenom']) and isset($_POST['cin']) and isset($_POST['email'])and isset($_POST['message'])and isset($_POST['adresse']))
      {
-        if(!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['cin']) and !empty($_POST['email'])and !empty($_POST['message']))
+        if(!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['cin']) and !empty($_POST['email'])and !empty($_POST['message'])and !empty($_POST['adresse']))
         {
             connexion();
             $sql1="select * from client where cin='".$_POST['cin']."'";
@@ -65,15 +68,18 @@
             $donnees=$reponse->fetch();
             if(empty($donnees))
             {
-                $sql2="insert into client(nom,prenom,cin,email,message) values('".$_POST['nom']."','".$_POST['prenom']."',
-                '".$_POST['cin']."','".$_POST['email']."','".$_POST['message']."')";
+                $sql2="insert into client (nom,prenom,cin,email,message,adresse) values('".$_POST['nom']."','".$_POST['prenom']."',
+                '".$_POST['cin']."','".$_POST['email']."','".$_POST['message']."','".$_POST['adresse']."')";
                 $bdd->exec($sql2);
                 echo "<center> Le client ".$_POST['nom']." est ajouté avec succes</center>";
             }
             else echo "<center> Le client existe deja!!!</center>";
         }
         else
-        echo "<center> Attention!!!Remplir tous les champs avec des valeurs non nulles</center>";
+        {
+          echo "<center> Attention!!!Remplir tous les champs avec des valeurs non nulles</center>";
+        }
+        
      }
      ?>
     <footer>

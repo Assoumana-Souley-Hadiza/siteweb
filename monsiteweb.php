@@ -30,9 +30,9 @@
         </div>
     </section>
         <div class="banniere">
-            <img src="beautiful-second-hand-market.jpg" alt="banniere de bienvenue">
+            <img src="ensemble-vetements-colores-feminins-etageres-chaussures-dans-magasin-vetements-toute-nouvelle-boutique-moderne.jpg" alt="banniere de bienvenue">
             <div class="banniere-text">
-             <h1>bienvenue sur Notre site</h1>
+             <h1>Bienvenue sur Notre site</h1>
             <h1>Découvrez la qualité et le style dans chaque pièce de notre collection!!</h1>
             </div>
         </div>
@@ -62,6 +62,7 @@
         <h2>Panier</h2>
     <ul id="liste-panier"></ul>
     <p id="total">Total: 0 MAD</p>
+    <button onclick="allerAuFormulaire()">Payer</button>
         </section>
         <section class="image-texte">
             <div class="text">
@@ -73,6 +74,52 @@
                 <img src="trois-jeunes-belles-filles-souriantes-dans-vetements-jeans-decontractes-ete-mode-femmes-insouciantes-sexy-posant-modeles-positifs-lunettes-soleil.jpg" alt="des filles">
             </aside>
         </section>
+        <script>
+             let panier = [];
+
+function ajouterAuPanier(nomProduit, prixProduit) {
+    panier.push({ nom: nomProduit, prix: prixProduit });
+    mettreAJourPanier();
+}
+
+function retirerDuPanier(index) {
+    panier.splice(index, 1);
+    mettreAJourPanier();
+}
+
+function mettreAJourPanier() {
+    const listePanier = document.getElementById('liste-panier');
+    const totalElement = document.getElementById('total');
+    let total = 0;
+
+    // Effacer la liste du panier
+    listePanier.innerHTML = '';
+
+    // Ajouter chaque produit au panier
+    panier.forEach((produit, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${produit.nom} - ${produit.prix} MAD`;
+
+        // Ajouter un bouton de suppression
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Retirer';
+        removeButton.addEventListener('click', () => retirerDuPanier(index));
+
+        listItem.appendChild(removeButton);
+        listePanier.appendChild(listItem);
+
+        // Mettre à jour le total
+        total += produit.prix;
+    });
+
+    // Mettre à jour le total affiché
+    totalElement.textContent = `Total: ${total} MAD`;
+}
+function allerAuFormulaire() {
+            // Rediriger vers la page du formulaire de paiement
+            window.location.href = 'formulaire.php';
+        }
+        </script>
         <footer>
             <div class="footer-contenue">
                 <p>Contactez nous:majesticluxury@gmail.com</p>
