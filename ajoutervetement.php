@@ -28,7 +28,7 @@
     ?>
     <center>
     <h3>Ajouter un nouveau produit</h3>
-    <form action="ajoutervetement.php" method="POST">
+    <form action="ajoutervetement.php" method="POST" >
     <table border="x" bgcolor=" green">
         <tr> 
             <th>Type:</th>

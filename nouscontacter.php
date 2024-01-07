@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nouscontacter</title>
-    <script langage="JavaScript" src="monscript.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,7 +22,7 @@
         </nav>
     </header>
     <center>
-
+<script langage="JavaScript" src="monscript.js"></script>
         <h2><u>INSCRIPTION</u></h2><br>
         <form name="f" action="nouscontacter.php" method="post" onSubmit="verif()">
             <table>
